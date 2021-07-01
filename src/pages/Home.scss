@@ -1,0 +1,13 @@
+.divider {
+    // background-color: #dfdfdf;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 200px;
+    h3 {
+        color: white;
+        text-align: center;
+        font-size: 1.5em;
+        margin: 0;
+    }
+}

@@ -1,7 +1,26 @@
-import './index.scss'
+import React, { useEffect } from 'react';
+import HomePage from './pages/Home';
+import './index.scss';
 
-export const App = () => {
+import { BrowserRouter, Route, RouteComponentProps } from 'react-router-dom';
+
+const App: React.FunctionComponent<any> = () => {
+    useEffect(()=> {
+
+    })
     return <>
-        <h1>React App</h1>
+        <div>
+            <BrowserRouter>
+                <Route 
+                    path='/'
+                    exact={true}
+                    render={(props: RouteComponentProps<any>) => (
+                        <HomePage {...props} name={'HomePage'}
+                        />)}
+                    />
+            </BrowserRouter>
+        </div>
     </>
 }
+
+export default App

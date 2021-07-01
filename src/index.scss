@@ -1,3 +1,23 @@
-h1 {
-    color: red;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+body {
+    margin: 0;
+    // background-color: #000;
+    background-color: #DFDFDF;
+    color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+.page-container {
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+.dflex {
+    display: flex;
 }
