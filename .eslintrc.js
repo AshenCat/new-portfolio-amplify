@@ -24,10 +24,14 @@ module.exports = {
     rules: {
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': ['warn'],
+      "@typescript-eslint/ban-types": ["warn"],
+      '@typescript-eslint/no-empty-function': 'off',
       '@typescript-eslint/no-var-requires': 'off',
       'react/prop-types': 'off',
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      'react-hooks/exhaustive-deps': 'off'
     },
   }
