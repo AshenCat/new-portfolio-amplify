@@ -1,0 +1,39 @@
+.intro {
+    h3{
+        text-align: center;
+        font-size: 1.5em;
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    .dflex {
+        padding-bottom: 60px;
+        .left {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+        }
+        .right {
+            flex: 2;
+            padding-right: 20px;
+            .name {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1.3em
+            }
+        };
+        @media screen and (max-width: 700px) {
+            flex-flow: column;
+            .right {
+                padding: 20px;
+            }
+        }
+    }
+}
