@@ -1,0 +1,38 @@
+.skills {
+    h3{
+        text-align: center;
+        font-size: 1.5em;
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    .dflex {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        padding: 20px;
+        .icon-card {
+            font-size: 4em;
+            flex: 1 1 15%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            height: 150px;
+            // align-items: center;
+            padding: 5px;
+            // border: 1px solid black;
+            figure {
+                text-align: center;
+                transition: .25s all;
+                margin: 0;
+                &:hover {
+                    font-size: 1.25em;
+                    color: #444;
+                }
+            }
+            figcaption {
+                font-size: .3em;
+            }
+        }
+    }
+}
