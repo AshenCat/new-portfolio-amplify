@@ -28,6 +28,10 @@ module.exports = {
             {
                 test: /\.(woff(2)?|eot|ttf|otf|svg)$/,
                 type: 'asset/inline',
+            },
+            {
+                test: /\.(webp)$/i,
+                type: 'asset/inline',
             }
         ],
     },
