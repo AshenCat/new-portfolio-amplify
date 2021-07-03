@@ -3,6 +3,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import IPage from '../../../interfaces/page'
 import './hero.scss'
 import { useDencrypt } from "use-dencrypt-effect";
+import logo from '../../../../img/mylogo.png'
 
 const values = ["Full Stack Developer", "Front End Developer", "Software Developer"];
 
@@ -22,14 +23,17 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
       }, []);
 
     return <header className="hero">
-        <h1>Klifford Agujar</h1>
-        {/* Search Engine purposes */}
-        <h2>Portfolio</h2>
-        <h2>Full Stack Developer</h2>
-        <h2>Front End Developer</h2>
-        <h2>Software Developer</h2>
-        {/* End: Search Engine purposes */}
-        <h3>{result}&nbsp;</h3>
+      <div className="logo">
+        <img src={logo} alt="KA logo" />
+      </div>
+      <h1>Klifford Agujar</h1>
+      {/* Search Engine purposes */}
+      <h2>Portfolio</h2>
+      <h2>Full Stack Developer</h2>
+      <h2>Front End Developer</h2>
+      <h2>Software Developer</h2>
+      {/* End: Search Engine purposes */}
+      <h3>{result}&nbsp;</h3>
     </header>
 }
 
