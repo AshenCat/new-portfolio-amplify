@@ -26,6 +26,7 @@ interface GithubData {
 const Projects: React.FunctionComponent<IPage> = () => {
     const [overlayData, setOverlayData] = useState<GithubData[]>([])
     const [catflixData, setCatflixData] = useState<GithubData[]>([])
+
     useEffect(() => {
         axios.get('https://api.github.com/repos/ashencat/catflix/commits').then(res=>{
             console.log(res.data)
@@ -40,6 +41,12 @@ const Projects: React.FunctionComponent<IPage> = () => {
             console.log(err)
         })
     }, [])
+
+    const openInAnotherPage = (url: string) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        if(newWindow) newWindow.opener = null;
+    }
+
     return (
         <section className="projects">
             <div className="page-container">
@@ -66,6 +73,9 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <p>
                             CAPSTONE - The idea is to migrate a business workflow from paper-based management into digital inventory management system and is expected to cut costs of a business owner after migrating. The Application was built on MERN stack and is designed to utilize intranets (private local network) taking scalability into consideration.
                         </p>
+                        <div className="links">
+                            <button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/capstone-abc-store')}>View Repository</button>
+                        </div>
                     </div>
                 </div>
                 <div className="project-container">
@@ -76,7 +86,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <h4>03</h4>
                         <h3>FutureDining</h3>
                         <p>
-                            FREELANCE - As a front end developer on a startup, the tasks was to simply make the views specified by the client. The stack of the project is MERN, and a demo is hosted on heroku.
+                            FREELANCE - As a front end developer on a startup, the tasks was to simply make the views specified by the client. This reactjs application is fully responsive for all screen sizes as specified by the client.
                         </p>
                     </div>
                 </div>
@@ -90,6 +100,9 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <p>
                             COLLEGE - Whilst python isn&apos;t my most comfortable language, I&apos;ve had a good time doing this project. Using the Common Objects in Context (COCO) dataset, I was able to detect objects in my screen in real time. Instead of inputting single image feeds, I modified it to take video feed instead and label all the objects it detects.
                         </p>
+                        <div className="links">
+                            <button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/PythonObjectDetection')}>View Repository</button>
+                        </div>
                     </div>
                 </div>
                 <div className="project-container">
@@ -118,6 +131,9 @@ const Projects: React.FunctionComponent<IPage> = () => {
                                 else return;
                             })}
                         </div>
+                        <div className="links">
+                            <button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/personal-overlay-2')}>View Repository</button>
+                        </div>
                     </div>
                 </div>
                 <div className="project-container">
@@ -145,6 +161,9 @@ const Projects: React.FunctionComponent<IPage> = () => {
                                 </div>
                                 else return;
                             })}
+                        </div>
+                        <div className="links">
+                            <button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/catflix')}>View Repository</button>
                         </div>
                     </div>
                 </div>
