@@ -3,6 +3,8 @@ import React from 'react'
 import IPage from '../../../interfaces/page'
 import { aws_endpoint, aws_key } from '../../../config/config'
 import './footer.scss'
+import { AiFillWarning } from "react-icons/ai";
+import { FaCheckCircle } from "react-icons/fa";
 
 const Footer: React.FunctionComponent<IPage> = () => {
     const [emailErr, setEmailErr] = React.useState<string>('')
@@ -10,6 +12,8 @@ const Footer: React.FunctionComponent<IPage> = () => {
     const [msgErr, setMsgErr] = React.useState<string>('')
 
     const [loading, setLoading] = React.useState<boolean>(false)
+    const [show, setShow] = React.useState<boolean>(false)
+    const [modalErr, setModalErr] = React.useState<boolean>(false)
 
     const onSubmit = (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
@@ -19,6 +23,7 @@ const Footer: React.FunctionComponent<IPage> = () => {
         setEmailErr('')
         setSubjectErr('')
         setMsgErr('')
+        console.log(show)
 
         const sender = (document.getElementById('input-sender') as HTMLInputElement)
         const subject = (document.getElementById('input-subject') as HTMLInputElement)
@@ -41,6 +46,7 @@ const Footer: React.FunctionComponent<IPage> = () => {
         }
 
         if(!err) {
+            setLoading(true)
             axios.post(aws_endpoint, {
                 sender: sender.value,
                 subject: subject.value,
@@ -51,9 +57,17 @@ const Footer: React.FunctionComponent<IPage> = () => {
                     "Content-Type": "application/json"
                 }
             }).then(res => {
-                console.log(res.data)
+                console.log(res)
+                setLoading(false)
+                if(res.status !== 200) {
+                    setModalErr(true)
+                }
+                setShow(true)
             }).catch(err => {
                 console.log(err)
+                setLoading(false)
+                setModalErr(true)
+                setShow(true)
             })
         }
     }
@@ -94,7 +108,33 @@ const Footer: React.FunctionComponent<IPage> = () => {
                     <small>{msgErr}</small>
                 </div>
                 <div className="btn-container">
-                    <button onClick={onSubmit} className="btn-submit" id="btn-submit">{loading ? <div className="loader"></div> : 'Submit'}</button>
+                    <button onClick={onSubmit} className={loading ? `btn-submit disabled`: `btn-submit`} id="btn-submit" disabled={loading}>{loading ? <div className="loader"></div> : 'Submit'}</button>
+                </div>
+            </div>
+        </div>
+        <div className={show ? `backdrop show` : `backdrop`}>
+            <div className="modal">
+                <div className="title">
+                    <h4>
+                        {modalErr ? <div className="err">
+                            <AiFillWarning />
+                            <span>Failed </span>
+                        </div> : <div className="success">
+                            <FaCheckCircle />
+                            <span>Success </span>
+                        </div>}
+                    </h4>
+                </div>
+                <div className="body">
+                    {modalErr ? <span>Failed to send message</span> : 'Message successfully sent!'}
+                </div>
+                <div className="actions">
+                    <button onClick={()=>{
+                        setModalErr(false)
+                        setShow(false)
+                    }}>
+                        Close
+                    </button>
                 </div>
             </div>
         </div>
