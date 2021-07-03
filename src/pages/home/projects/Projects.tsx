@@ -6,7 +6,7 @@ import Capstone from '../../../../img/Capstone.webp'
 import Resto from '../../../../img/RestoPhones.webp'
 import Catflix from '../../../../img/Catflix-register.webp'
 import ML from '../../../../img/MLcomp.gif'
-import personaloverlay from '../../../../img/personaloverlay.png'
+import personaloverlay from '../../../../img/personaloverlay.webp'
 import axios from 'axios'
 
 interface GithubData {
