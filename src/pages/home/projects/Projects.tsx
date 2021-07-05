@@ -52,7 +52,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
             <div className="page-container">
                 <h3>Projects</h3>
                 <div className="project-container">
-                    <div className="image">
+                    <div className="image" onClick={()=>openInAnotherPage('https://raw.githubusercontent.com/AshenCat/new-portfolio-amplify/master/img/tpcPhones.webp')} onKeyPress={()=>{}} role="button" tabIndex={0}>
                         <img src={TPCPhoneView} alt="TPC Phone view" className="prj-image" />
                     </div>
                     <div className="text">
@@ -64,8 +64,8 @@ const Projects: React.FunctionComponent<IPage> = () => {
                     </div>
                 </div>
                 <div className="project-container">
-                    <div className="image">
-                        <img src={Capstone} alt="Inventory Management System" className="prj-image" />
+                    <div className="image" onClick={()=>openInAnotherPage('https://raw.githubusercontent.com/AshenCat/new-portfolio-amplify/master/img/Capstone.webp')} onKeyPress={()=>{}} role="button" tabIndex={0}>
+                        <img src={Capstone} alt="Inventory Management System" className="prj-image"  />
                     </div>
                     <div className="text">
                         <h4>02</h4>
@@ -73,13 +73,13 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <p>
                             CAPSTONE - The idea is to migrate a business workflow from paper-based management into digital inventory management system and is expected to cut costs of a business owner after migrating. The Application was built on MERN stack and is designed to utilize intranets (private local network) taking scalability into consideration.
                         </p>
-                        <div className="links">
+                        <div className="links"> 
                             <button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/capstone-abc-store')}>View Repository</button>
                         </div>
                     </div>
                 </div>
                 <div className="project-container">
-                    <div className="image">
+                    <div className="image" onClick={()=>openInAnotherPage('https://raw.githubusercontent.com/AshenCat/new-portfolio-amplify/master/img/RestoPhones.webp')} onKeyPress={()=>{}} role="button" tabIndex={0}>
                         <img src={Resto} alt="FutureDining" className="prj-image" />
                     </div>
                     <div className="text">
@@ -91,7 +91,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                     </div>
                 </div>
                 <div className="project-container">
-                    <div className="image">
+                    <div className="image" onClick={()=>openInAnotherPage('https://raw.githubusercontent.com/AshenCat/new-portfolio-amplify/master/img/MLcomp.gif')} onKeyPress={()=>{}} role="button" tabIndex={0}>
                         <img src={ML} alt="Python Object Detection" className="prj-image" />
                     </div>
                     <div className="text">
@@ -106,7 +106,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                     </div>
                 </div>
                 <div className="project-container">
-                    <div className="image">
+                    <div className="image" onClick={()=>openInAnotherPage('https://raw.githubusercontent.com/AshenCat/new-portfolio-amplify/master/img/personaloverlay.webp')} onKeyPress={()=>{}} role="button" tabIndex={0}>
                         <img src={personaloverlay} alt="Personal Overlay" className="prj-image" />
                     </div>
                     <div className="text">
@@ -137,7 +137,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                     </div>
                 </div>
                 <div className="project-container">
-                    <div className="image">
+                    <div className="image" onClick={()=>openInAnotherPage('https://raw.githubusercontent.com/AshenCat/new-portfolio-amplify/master/img/Catflix-register.webp')} onKeyPress={()=>{}} role="button" tabIndex={0}>
                         <img src={Catflix} alt="Personal Overlay" className="prj-image" />
                     </div>
                     <div className="text">
