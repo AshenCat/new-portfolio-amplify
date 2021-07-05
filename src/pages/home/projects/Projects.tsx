@@ -59,7 +59,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <h4>01</h4>
                         <h3>Tender Plant and Care</h3>
                         <p>
-                            FREELANCE - As a web developer, the main responsibility is to follow the specification given (on Figma). Shown are some of the views that I have worked on. Another part of my task was to set-up the AWS EC2 server to host the project ranging from setting up the linux environment to enabling SSH using certbot.
+                            FREELANCE - As a web developer, the main responsibility is to follow the specification given (on Figma). Shown are some of the views that I have worked on. Another part of my task was to set-up the AWS EC2 server to host the project ranging from setting up the linux environment to enabling HTTPS by issuing an SSL certificate using certbot.
                         </p>
                     </div>
                 </div>
