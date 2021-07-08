@@ -1,15 +1,73 @@
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .projects {
+    background-color: #fff;
+    position: relative;
+    padding-bottom: 80px;
+    @media screen and (max-width: 700px) {
+        padding-bottom: 10px;
+    }
+    overflow: hidden;
+    .wave-top {
+        position: absolute;
+        width: 200%;
+        left: 0;
+        // height: 80%;
+        // border: 1px solid red;
+        animation: wave linear 25s infinite;
+        .st-top {
+            // width: 100%;
+            overflow: hidden;
+            fill: #f6f6f6; 
+            stroke: #f6f6f6;
+        }
+    }
+    .wave-top2 {
+        position: absolute;
+        width: 200%;
+        left: 0;
+        animation: wave linear 30s infinite;
+        .st-top {
+            // width: 100%;
+            overflow: hidden;
+            fill: #efefef; 
+            stroke: #f6f6f6;
+        }
+    }
+    .wave-bottom {
+        position: absolute;
+        bottom: 0;
+        z-index: 0;
+        // height: 130px;
+        width: 100%;
+        // margin-top: 1px;
+        // width: 200%;
+        .st0-bottom {
+            // fill: #f6f6f6;
+            
+            fill: #f6f6f6; 
+            stroke: #f6f6f6;
+        }
+    }
     .page-container {
         h3{
             text-align: center;
             font-size: 2em;
-            padding-top: 60px;
+            padding-top: 150px;
             padding-bottom: 20px;
             @media screen and (max-width: 700px) {
-                padding-top: 10px;
+                padding-top: 40px;
             }
         }
         .project-container {
+            margin: 30px 0;
             padding: 20px;
             display: flex;
             @media screen and (max-width: 1000px) {
@@ -28,19 +86,28 @@
                 font-size: 1.5em;
             }
             .image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 flex: 2;
-                max-width: 700px;
-                margin: 0 20px;
+                max-width: 500px;
+                margin: 0 50px;
                 .prj-image {
                     width: 100%;
                 }
             }
             .text {
+                z-index: 1;
                 flex: 1;
                 display: flex;
                 flex-flow: column;
                 justify-content: center;
                 position: relative;
+                padding: 30px;
+                @media screen and (max-width: 1000px) {
+                    line-height: normal;
+                    padding: 0px;
+                }
                 h3 {
                     padding: 0;
                 }
@@ -51,10 +118,10 @@
                     margin: 0;
                     text-align: justify;
                     
-                    @media screen and (max-width: 1000px) {
-                        line-height: normal;
-                        padding: 20px;
-                    }
+                    // @media screen and (max-width: 1000px) {
+                    //     line-height: normal;
+                    //     padding: 20px;
+                    // }
                 }
                 h4 {
                     font-size: 10em;
