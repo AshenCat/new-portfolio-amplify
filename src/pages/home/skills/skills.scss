@@ -1,5 +1,7 @@
 .skills {
     margin-bottom: 30px;
+    padding-top: 60px;
+    background-color: #f6f6f6;
     h3{
         text-align: center;
         font-size: 2em;
@@ -25,13 +27,17 @@
             // align-items: center;
             padding: 5px;
             box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+            transition: all .25s;
+            &:hover {
+                box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+            }
             // border: 1px solid black;
             figure {
                 text-align: center;
                 transition: .25s all;
                 margin: 0;
                 &:hover {
-                    font-size: 1.25em;
+                    font-size: 1.05em;
                     color: #444;
                 }
             }

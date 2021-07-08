@@ -8,7 +8,7 @@
 }
 
 .projects {
-    background-color: #fff;
+    background-color: rgba(255,255,255,0);
     position: relative;
     padding-bottom: 80px;
     @media screen and (max-width: 700px) {
@@ -16,6 +16,7 @@
     }
     overflow: hidden;
     .wave-top {
+        z-index: -1;
         position: absolute;
         width: 200%;
         left: 0;
@@ -30,6 +31,7 @@
         }
     }
     .wave-top2 {
+        z-index: -1;
         position: absolute;
         width: 200%;
         left: 0;
@@ -94,6 +96,9 @@
                 margin: 0 50px;
                 .prj-image {
                     width: 100%;
+                }
+                &:hover{
+                    cursor: pointer;
                 }
             }
             .text {
@@ -172,6 +177,9 @@
                         align-content: center;
                         font-size: 1.1em;
                         padding: 5px 15px;
+                        &:hover{
+                            cursor: pointer;
+                        }
                     }
                 }
             }

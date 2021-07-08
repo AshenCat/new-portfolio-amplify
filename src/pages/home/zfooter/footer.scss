@@ -6,6 +6,7 @@
     align-content: center;
     align-items: center;
     flex-flow: column;
+
     h3{
         text-align: center;
         font-size: 2em;
@@ -25,7 +26,7 @@
             width: 90%;
         }
         @media screen and (min-width: 1260px) {
-            width: 1100px;
+            width: 1200px;
         }
         .left {
             flex: 1;
@@ -33,9 +34,9 @@
                 li {
                     a {
                         color: whitesmoke;
-                    &:visited {
-                        color: whitesmoke;
-                    }
+                        &:visited {
+                            color: whitesmoke;
+                        }
                     }
                 }
             }
@@ -148,6 +149,7 @@
     align-content: center;
     align-items: center;
     justify-content: center;
+    
     .modal {
         display: flex;
         flex-flow: column;
