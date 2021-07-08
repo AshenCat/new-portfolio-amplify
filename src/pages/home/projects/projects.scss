@@ -44,6 +44,7 @@
         }
     }
     .wave-bottom {
+        z-index: -1;
         position: absolute;
         bottom: 0;
         z-index: 0;
@@ -88,6 +89,7 @@
                 font-size: 1.5em;
             }
             .image {
+                z-index: 1;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -96,6 +98,28 @@
                 margin: 0 50px;
                 .prj-image {
                     width: 100%;
+                    position: relative;
+                    .prj-image-inside {
+                        position: absolute;
+                        top: 43px;
+                        left: 20px;
+                        right: 20px;
+                        height: 230px;
+                        overflow: hidden;
+                        #content-up {
+                            animation: goup 20s linear;
+                            position: relative;
+                            // transition: transform 2s;
+                            @keyframes goup {
+                                0% {
+                                    transform: translateY(0);
+                                }
+                                100% {
+                                    transform: translateY(-100%);
+                                }
+                            }
+                        }
+                    }
                 }
                 &:hover{
                     cursor: pointer;

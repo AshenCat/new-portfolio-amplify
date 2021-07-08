@@ -7,6 +7,7 @@ import Resto from '../../../../img/RestoPhones.webp'
 import Catflix from '../../../../img/Catflix-register.webp'
 import ML from '../../../../img/MLcomp.gif'
 import personaloverlay from '../../../../img/personaloverlay.webp'
+import portfolio from '../../../../img/portfolio.webp'
 import axios from 'axios'
 
 interface GithubData {
@@ -26,17 +27,21 @@ interface GithubData {
 const Projects: React.FunctionComponent<IPage> = () => {
     const [overlayData, setOverlayData] = useState<GithubData[]>([])
     const [catflixData, setCatflixData] = useState<GithubData[]>([])
+    const [portfolioData, setPorfolioData] = useState<GithubData[]>([])
 
     useEffect(() => {
         axios.get('https://api.github.com/repos/ashencat/catflix/commits').then(res=>{
-            console.log(res.data)
             setCatflixData(res.data)
         }).catch(err=>{
             console.log(err)
         })
         axios.get('https://api.github.com/repos/ashencat/personal-overlay-2/commits').then(res=>{
-            console.log(res.data)
             setOverlayData(res.data)
+        }).catch(err=>{
+            console.log(err)
+        })
+        axios.get('https://api.github.com/repos/ashencat/new-portfolio-amplify/commits').then(res=>{
+            setPorfolioData(res.data)
         }).catch(err=>{
             console.log(err)
         })
@@ -149,7 +154,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                 </div>
                 <div className="project-container">
                     <div className="image" onClick={()=>openInAnotherPage('https://raw.githubusercontent.com/AshenCat/new-portfolio-amplify/master/img/Catflix-register.webp')} onKeyPress={()=>{}} role="button" tabIndex={0}>
-                        <img src={Catflix} alt="Personal Overlay" className="prj-image" />
+                        <img src={Catflix} alt="catflix" className="prj-image" />
                     </div>
                     <div className="text">
                         <h4>06</h4>
@@ -175,6 +180,39 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         </div>
                         <div className="links">
                             <button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/catflix')}>View Repository</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="project-container">
+                    <div className="image" onClick={()=>openInAnotherPage('https://raw.githubusercontent.com/AshenCat/new-portfolio-amplify/master/img/personaloverlay.webp')} onKeyPress={()=>{}} role="button" tabIndex={0}>
+                        <div className="prj-image">
+                            <img src={portfolio} alt="Portfolio" className="prj-image" />
+                        </div>
+                    </div>
+                    <div className="text">
+                        <h4>07</h4>
+                        <h3>Portfolio</h3>
+                        <p>
+                            Personal Project - This portfolio page is built with React, SASS css preprocessor, and Typescript hosted at Amplify. Below lists the changes made to this page.
+                        </p>
+                        <div><b>Commits: </b></div>
+                        <div className="small-list" style={{height: '180px'}}>
+                            {/* vscode pushes doesn't link to account so only merge will link my account */}
+                            {portfolioData.map((obj, index)=> {
+                                if(obj?.commit?.message) return <div className="list-row" key={`${obj?.commit?.author?.name}${obj?.commit?.author?.date}${index}`}>
+                                    <div className="author">
+                                        <img src="https://avatars.githubusercontent.com/u/8600507?v=4" alt="Klifford Agujar" className="smol-image" />
+                                        Klifford Agujar ({obj?.commit?.author?.date})
+                                    </div>
+                                    <div className="message">
+                                        {obj?.commit?.message}
+                                    </div>
+                                </div>
+                                else return;
+                            })}
+                        </div>
+                        <div className="links">
+                            <button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/new-portfolio-amplify')}>View Repository</button>
                         </div>
                     </div>
                 </div>
