@@ -184,7 +184,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                     </div>
                 </div>
                 <div className="project-container">
-                    <div className="image" onClick={()=>openInAnotherPage('https://raw.githubusercontent.com/AshenCat/new-portfolio-amplify/master/img/personaloverlay.webp')} onKeyPress={()=>{}} role="button" tabIndex={0}>
+                    <div className="image" onClick={()=>openInAnotherPage('https://raw.githubusercontent.com/AshenCat/new-portfolio-amplify/master/img/portfolio.webp')} onKeyPress={()=>{}} role="button" tabIndex={0}>
                         <div className="prj-image">
                             <img src={portfolio} alt="Portfolio" className="prj-image" />
                         </div>
