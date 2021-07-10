@@ -16,8 +16,8 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
                 <div className="left">
                     <img src={me} alt="me" />
                     <div className="icons">
-                        <IoLogoLinkedin onClick={()=>openInNewTab('https://www.linkedin.com/in/klifford-agujar-8714a41a9/')} style={{color: '#0A66C2'}}  tabIndex={0}/>
-                        <IoLogoGithub onClick={()=>openInNewTab('https://github.com/ashencat')} style={{color: '#0A66C2'}} tabIndex={0} />
+                        <IoLogoLinkedin onClick={()=>openInNewTab('https://www.linkedin.com/in/klifford-agujar-8714a41a9/')} tabIndex={0}/>
+                        <IoLogoGithub onClick={()=>openInNewTab('https://github.com/ashencat')} tabIndex={0} />
                     </div>
                 </div>
                 <div className="right">
