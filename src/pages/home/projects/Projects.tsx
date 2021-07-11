@@ -135,15 +135,21 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <div className="small-list" style={{height: '180px'}}>
                             {/* vscode pushes doesn't link to account so only merge will link my account */}
                             {overlayData.map((obj, index)=> {
-                                if(obj?.commit?.message) return <div className="list-row" key={`${obj?.commit?.author?.name}${obj?.commit?.author?.date}${index}`}>
+                                if(obj?.commit?.message) {
+                                    const commitDate = obj?.commit?.author?.date ? new Date(obj?.commit?.author?.date).toString() : 'N/A'
+                                    return <div className="list-row" key={`${obj?.commit?.author?.name}${obj?.commit?.author?.date}${index}`}>
                                     <div className="author">
                                         <img src="https://avatars.githubusercontent.com/u/8600507?v=4" alt="Klifford Agujar" className="smol-image" />
-                                        Klifford Agujar ({obj?.commit?.author?.date})
+                                        <div className="nameAndDate">
+                                            <div className="name">Klifford Agujar</div> 
+                                            <div><small>{commitDate}</small></div> 
+                                        </div>
                                     </div>
                                     <div className="message">
-                                        {obj?.commit?.message}
+                                        - {obj?.commit?.message}
                                     </div>
                                 </div>
+                                }
                                 else return;
                             })}
                         </div>
@@ -166,15 +172,21 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <div className="small-list" style={{height: '180px'}}>
                             {/* vscode pushes doesn't link to account so only merge will link my account */}
                             {catflixData.map((obj, index)=> {
-                                if(obj?.commit?.message) return <div className="list-row" key={`${obj?.commit?.author?.name}${obj?.commit?.author?.date}${index}`}>
+                                if(obj?.commit?.message) {
+                                    const commitDate = obj?.commit?.author?.date ? new Date(obj?.commit?.author?.date).toString() : 'N/A'
+                                    return <div className="list-row" key={`${obj?.commit?.author?.name}${obj?.commit?.author?.date}${index}`}>
                                     <div className="author">
                                         <img src="https://avatars.githubusercontent.com/u/8600507?v=4" alt="Klifford Agujar" className="smol-image" />
-                                        Klifford Agujar ({obj?.commit?.author?.date})
+                                        <div className="nameAndDate">
+                                            <div className="name">Klifford Agujar</div> 
+                                            <div><small>{commitDate}</small></div> 
+                                        </div>
                                     </div>
                                     <div className="message">
-                                        {obj?.commit?.message}
+                                        - {obj?.commit?.message}
                                     </div>
                                 </div>
+                                }
                                 else return;
                             })}
                         </div>
@@ -199,15 +211,21 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <div className="small-list" style={{height: '180px'}}>
                             {/* vscode pushes doesn't link to account so only merge will link my account */}
                             {portfolioData.map((obj, index)=> {
-                                if(obj?.commit?.message) return <div className="list-row" key={`${obj?.commit?.author?.name}${obj?.commit?.author?.date}${index}`}>
+                                if(obj?.commit?.message) {
+                                    const commitDate = obj?.commit?.author?.date ? new Date(obj?.commit?.author?.date).toString() : 'N/A'
+                                    return <div className="list-row" key={`${obj?.commit?.author?.name}${obj?.commit?.author?.date}${index}`}>
                                     <div className="author">
                                         <img src="https://avatars.githubusercontent.com/u/8600507?v=4" alt="Klifford Agujar" className="smol-image" />
-                                        Klifford Agujar ({obj?.commit?.author?.date})
+                                        <div className="nameAndDate">
+                                            <div className="name">Klifford Agujar</div> 
+                                            <div><small>{commitDate}</small></div> 
+                                        </div>
                                     </div>
                                     <div className="message">
-                                        {obj?.commit?.message}
+                                        - {obj?.commit?.message}
                                     </div>
                                 </div>
+                                }
                                 else return;
                             })}
                         </div>
