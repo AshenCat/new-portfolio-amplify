@@ -94,7 +94,7 @@ const Footer: React.FunctionComponent<IPage> = () => {
             <div className="right">
                 <div className="form-group-area">
                     <label htmlFor="input-sender">Sender Email: </label>
-                    <input type="text" name="input-sender" id="input-sender" className="input-short" style={{width: '60%'}} />
+                    <input type="text" name="input-sender" id="input-sender" className="input-short"/>
                     <small>{emailErr}</small>
                 </div>
                 <div className="form-group-area">

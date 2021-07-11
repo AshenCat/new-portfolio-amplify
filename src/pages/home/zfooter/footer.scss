@@ -111,7 +111,15 @@
         margin-bottom: 8px;
         color: #ED4337;
     }
+
+    @media screen and (min-width: 1000px) {
+        .input-short {
+            width: 60%;
+        }
+    }
 }
+
+
 
 .loader {
     border: 4px solid #f3f3f3;
