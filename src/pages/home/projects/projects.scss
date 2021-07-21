@@ -21,12 +21,12 @@
         left: 0;
         // height: 80%;
         // border: 1px solid red;
-        animation: wave linear 25s infinite;
+        animation: wave linear 60s infinite;
         .st-top {
             // width: 100%;
             overflow: hidden;
-            fill: #f6f6f6; 
-            stroke: #f6f6f6;
+            fill:  var(--main-bg-darker-color);;
+            stroke:  var(--main-bg-darker-color);;
         }
     }
     .wave-top2 {
@@ -34,12 +34,12 @@
         position: absolute;
         width: 200%;
         left: 0;
-        animation: wave linear 30s infinite;
+        animation: wave linear 90s infinite;
         .st-top {
             // width: 100%;
             overflow: hidden;
             fill: #efefef; 
-            stroke: #f6f6f6;
+            stroke:  var(--main-bg-darker-color);
         }
     }
     .wave-bottom {
@@ -51,11 +51,9 @@
         width: 100%;
         // margin-top: 1px;
         // width: 200%;
-        .st0-bottom {
-            // fill: #f6f6f6;
-            
-            fill: #f6f6f6; 
-            stroke: #f6f6f6;
+        .st0-bottom {            
+            fill:  var(--main-bg-darker-color);
+            stroke:  var(--main-bg-darker-color);
         }
     }
     .page-container {
@@ -70,7 +68,7 @@
         }
         .project-container {
             margin: 30px 0;
-            padding: 80px;
+            padding: 80px 10px;
             display: flex;
             @media screen and (max-width: 1000px) {
                 flex-direction: column;
@@ -218,7 +216,7 @@
                         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.12), 0px 1px 5px rgba(0, 0, 0, 0.2);
                         border-radius: 4px;
                         border: none;
-                        background-color: #0171B5;
+                        background-color: var(--accent-color);
                         color: var(--bg-dark-txt-color);
                         &:hover{
                             cursor: pointer;
