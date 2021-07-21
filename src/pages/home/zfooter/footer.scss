@@ -1,6 +1,6 @@
 .footer {
     background-color: #2a2a2a;
-    color: white;
+    color: var(--bg-dark-txt-color);
     display: flex;
     justify-content: center;
     align-content: center;
@@ -55,7 +55,7 @@
                     border-radius: 5px;
                     background-color: #0171B5;
                     border: none;
-                    color: white;
+                    color: var(--bg-dark-txt-color);
                     font-size: 1.2em;
                     &:hover {
                         cursor: pointer;
@@ -161,9 +161,9 @@
     .modal {
         display: flex;
         flex-flow: column;
-        background-color: white;
+        background-color: var(--main-bg-color);
         width: 85%;
-        color: black;
+        color: var(--bg-white-txt-color);
         border-radius: 5px;
 
         border: 1px solid rgba(0, 0, 0, 0.3);

@@ -16,7 +16,7 @@
     h1 {
         font-size: 5em;
         border-bottom: 8px solid #0171B5;
-        color: white;
+        color: var(--bg-dark-txt-color);
         @media screen and (max-width: 400px) {
             border-bottom: 4px solid #0171B5;
             font-size: 2em;
@@ -29,7 +29,7 @@
     }
     h3 {
         font-size: 2em;
-        color: white;
+        color: var(--bg-dark-txt-color);
         @media screen and (max-width: 400px) {
             font-size: 1.1em;
         }

@@ -10,7 +10,6 @@
 .projects {
     background-color: rgba(255,255,255,0);
     position: relative;
-    padding-bottom: 80px;
     @media screen and (max-width: 700px) {
         padding-bottom: 10px;
     }
@@ -71,13 +70,14 @@
         }
         .project-container {
             margin: 30px 0;
-            padding: 20px;
+            padding: 80px;
             display: flex;
             @media screen and (max-width: 1000px) {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 align-content: center;
+                padding: 20px;
             }
             &:nth-child(odd) {
                 flex-direction: row-reverse;
@@ -219,7 +219,7 @@
                         border-radius: 4px;
                         border: none;
                         background-color: #0171B5;
-                        color: white;
+                        color: var(--bg-dark-txt-color);
                         &:hover{
                             cursor: pointer;
                         }
