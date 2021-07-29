@@ -22,18 +22,20 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
         return () => clearInterval(action);
       }, []);
 
-    return <header className="hero">
-      <div className="logo">
-        <img src={logo} alt="KA logo" />
+    return <header className="hbg">
+      <div className="hero">
+        <div className="logo">
+          <img src={logo} alt="KA logo" />
+        </div>
+        <h1>Klifford Agujar</h1>
+        {/* Search Engine purposes */}
+        <h2>Portfolio</h2>
+        <h2>Full Stack Developer</h2>
+        <h2>Front End Developer</h2>
+        <h2>Software Developer</h2>
+        {/* End: Search Engine purposes */}
+        <h3>{result}&nbsp;</h3>
       </div>
-      <h1>Klifford Agujar</h1>
-      {/* Search Engine purposes */}
-      <h2>Portfolio</h2>
-      <h2>Full Stack Developer</h2>
-      <h2>Front End Developer</h2>
-      <h2>Software Developer</h2>
-      {/* End: Search Engine purposes */}
-      <h3>{result}&nbsp;</h3>
     </header>
 }
 
