@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import HomePage from './pages/Home';
+import HomePage from './pages/home/Home';
 import './index.scss';
 
 import { BrowserRouter, Route, RouteComponentProps } from 'react-router-dom';
+import Blog from './pages/blog/Blog';
 
 const App: React.FunctionComponent<any> = () => {
     useEffect(()=> {
@@ -18,6 +19,12 @@ const App: React.FunctionComponent<any> = () => {
                         <HomePage {...props} name={'HomePage'}
                         />)}
                     />
+                <Route
+                    path='/blog'
+                    exact={true}
+                    render={(props: RouteComponentProps<any>) => (
+                        <Blog {...props} name={'BlogPage'} />
+                    )} />
             </BrowserRouter>
         </div>
     </>
