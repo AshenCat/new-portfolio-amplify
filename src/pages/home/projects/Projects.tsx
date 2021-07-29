@@ -205,7 +205,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <h4>07</h4>
                         <h3>Portfolio</h3>
                         <p>
-                            Personal Project - This portfolio page is built with React, SASS css preprocessor, and Typescript hosted at Amplify. Below lists the changes made to this page.
+                            Personal Project - This portfolio page is built with React, SASS, and Typescript hosted at Amplify. It also uses AWS Lambda serverless function to forward an email to me in the footer section. Below lists the changes made to this page.
                         </p>
                         <div><b>Commits: </b></div>
                         <div className="small-list" style={{height: '180px'}}>
