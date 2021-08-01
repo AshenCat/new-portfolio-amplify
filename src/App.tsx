@@ -4,6 +4,7 @@ import './index.scss';
 
 import { BrowserRouter, Route, RouteComponentProps } from 'react-router-dom';
 import Blog from './pages/blog/Blog';
+import Header from './pages/Header';
 
 const App: React.FunctionComponent<any> = () => {
     useEffect(()=> {
@@ -12,6 +13,7 @@ const App: React.FunctionComponent<any> = () => {
     return <>
         <div>
             <BrowserRouter>
+                <Header />
                 <Route 
                     path='/'
                     exact={true}
