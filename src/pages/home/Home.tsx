@@ -5,21 +5,37 @@ import Intro from './intro/Intro'
 import './Home.scss'
 import Projects from './projects/Projects';
 import Skills from './skills/Skills';
-import Footer from './zfooter/Footer';
 import { motion } from 'framer-motion';
 
-const Home: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
+const Home: React.FunctionComponent<IPage & RouteComponentProps<any>> = (props) => {
+
+    const mainvariant = {
+        initial: {
+            backgroundColor: '#000'
+        },
+        animate: {
+            backgroundColor: '#00000000',
+            when: "beforeChildren",
+            staggerChildren: 1
+        },
+        exit: {
+            x: '-100vw',
+            transition: {ease: 'easeInOut'}
+        }
+    }
+
     return  <motion.main
                 className="home"
-                initial={{opacity: 0, backgroundColor: '#000'}}
-                animate={{opacity: 1, backgroundColor: '#00000000'}}
+                variants={mainvariant}
+                initial="initial"
+                animate="animate"
+                exit="exit"
                 // transition={{type: 'tween'}}
             >
-        <Hero name="hero" />
+        <Hero name="hero" width={props.width} />
         <Intro name="intro" />
         <Projects name="projects" />
         <Skills name="skills" />
-        <Footer name="footer" />
     </motion.main>
 }
 

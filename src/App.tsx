@@ -1,25 +1,31 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import HomePage from './pages/home/Home';
 import './index.scss';
 
-import { BrowserRouter, Route, RouteComponentProps } from 'react-router-dom';
+import { Route, RouteComponentProps, Switch, useLocation } from 'react-router-dom';
 import Blog from './pages/blog/Blog';
-import Header from './pages/Header';
+import Header from './pages/component/header/Header';
+import Footer from './pages/component/footer/Footer';
+import { AnimatePresence } from 'framer-motion';
+import useWindowDimensions from './hooks/useWindowDimensions';
 
 const App: React.FunctionComponent<any> = () => {
-    useEffect(()=> {
 
-    })
+    const location = useLocation();
+
+    
+    const { width, height } = useWindowDimensions();
+    
     return <>
-        <div>
-            <BrowserRouter>
-                <Header />
+        <Header height={height} />
+        <AnimatePresence>
+            <Switch location={location} key={location.key}>
                 <Route 
                     path='/'
                     exact={true}
                     render={(props: RouteComponentProps<any>) => (
-                        <HomePage {...props} name={'HomePage'}
-                        />)}
+                        <HomePage {...props} name={'HomePage'} width={width}
+                    />)}
                     />
                 <Route
                     path='/blog'
@@ -27,8 +33,10 @@ const App: React.FunctionComponent<any> = () => {
                     render={(props: RouteComponentProps<any>) => (
                         <Blog {...props} name={'BlogPage'} />
                     )} />
-            </BrowserRouter>
-        </div>
+                    
+            </Switch>
+        </AnimatePresence>
+        <Footer name="footer" />
     </>
 }
 

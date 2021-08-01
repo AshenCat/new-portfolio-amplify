@@ -18,11 +18,12 @@
    
         h1 {
             // font-size: 5em;
+            transition: .25s;
             border-bottom: 8px solid var(--accent-color);
             color: var(--bg-dark-txt-color);
-            @media screen and (max-width: 400px) {
+            @media screen and (max-width:768px) {
                 border-bottom: 4px solid var(--accent-color);
-                font-size: 2em;
+                font-size: 2em !important;
             }
         }
         h2 {
@@ -34,7 +35,7 @@
             font-size: 2em;
             color: var(--bg-dark-txt-color);
             transition: .5s;
-            @media screen and (max-width: 575px) {
+            @media screen and (max-width: 768px) {
                 font-size: 1.1em;
             }
         }

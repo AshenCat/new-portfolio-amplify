@@ -1,3 +1,5 @@
 export default interface IPage {
-    name: string;
+    name?: string;
+    width?: number;
+    height? : number;
 }

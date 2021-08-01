@@ -4,14 +4,22 @@ import IPage from '../../../interfaces/page'
 import './hero.scss'
 import { useDencrypt } from "use-dencrypt-effect";
 import { motion } from 'framer-motion';
-import { useMediaQuery } from 'react-responsive'
 
 const values = ["Full Stack Developer", "Front End Developer", "Software Developer"];
 
 const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
     const { result, dencrypt } = useDencrypt();
 
-    const isMobile = useMediaQuery({query: '(max-width: 575px)'})
+    const h1variant = {
+      initial: {
+        fontSize: '.1em',
+        color: '#0171B5'
+      },
+      animate: {
+        fontSize: '5em',
+        color: '#fff',
+      }
+    }
 
     React.useEffect(() => {
         let i = 0;
@@ -25,12 +33,11 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
         return () => clearInterval(action);
       }, []);
 
-    return <header className="hbg">
+    return <div className="hbg">
       <div className="hero">
         <motion.h1 
-          initial={{fontSize: '.1em'}}
-          animate={{fontSize: isMobile? '2em':'5em'}}
           // transition={{ duration: .1 }}
+          variants={h1variant}
           >
           Klifford Agujar
         </motion.h1>
@@ -42,7 +49,7 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
         {/* End: Search Engine purposes */}
         <h3>{result}&nbsp;</h3>
       </div>
-    </header>
+    </div>
 }
 
 export default withRouter(Hero)
