@@ -10,6 +10,10 @@ const variants = {
   }
 };
 
+type toggle = {
+  toggle: () => void
+}
+
 const liVariants = {
   open: {
     y: 0,
@@ -27,13 +31,13 @@ const liVariants = {
   }
 };
 
-export const Navigation = () => (
+export const Navigation = ({toggle}: toggle) => (
   <motion.ul variants={variants} className="ulhead">
     <motion.li variants={liVariants} className="liheader" style={{margin: '0 auto'}}>
       <h2>Navigate to:</h2>
     </motion.li>
     {itemIds.map((routeName, index) => (
-      <MenuItem routeName={routeName} key={routeName + index} />
+      <MenuItem routeName={routeName} key={routeName + index} toggle={toggle} />
     ))}
   </motion.ul>
 );

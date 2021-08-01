@@ -42,6 +42,10 @@ module.exports = {
     },
     devServer: {
       historyApiFallback: true,
+      host: '10.0.0.122',//your ip address
+      port: 8080,
+      useLocalIp: true,
+      disableHostCheck: true,
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -39,7 +39,7 @@ function Header({height}: IPage &  RouteComponentProps<any>): ReactElement<any> 
               ref={containerRef}
             >
               <motion.div className="background" variants={sidebar} />
-              <Navigation />
+              <Navigation toggle={() => toggleOpen()} />
               
               <MenuToggle toggle={() => toggleOpen()} />
 

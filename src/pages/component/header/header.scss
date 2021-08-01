@@ -66,8 +66,8 @@ nav {
     cursor: pointer;
   }
 
-ul,
-li {
+ul.ulhead,
+li.lihead, li.liheader {
   margin: 0;
   padding: 0;
 }
@@ -100,3 +100,10 @@ li.liheader {
         margin: 0 auto;
     }
   }
+
+@supports not (backdrop-filter: none) {
+    .background {
+        background: #a1a1a1;
+        mix-blend-mode: difference;
+    }
+}

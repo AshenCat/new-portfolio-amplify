@@ -21,6 +21,7 @@ const variants = {
 
 interface MyComponentProps extends RouteComponentProps<any> {
     routeName: string;
+    toggle: () => void;
 }
 
 const MenuItem = (props : MyComponentProps) => {
@@ -30,12 +31,14 @@ const MenuItem = (props : MyComponentProps) => {
             case 'Home':
                 if (props.history.location.pathname !== '/'){
                     console.log('routing to \'/\'')
+                    props.toggle()
                     props.history.push('/')
                 }
                 return;
             case 'Blog':
                 if (props.history.location.pathname !== '/blog'){
                     console.log('routing to \'/blog\'')
+                    props.toggle()
                     props.history.push('/blog')
                 }
                 return;
