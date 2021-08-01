@@ -3,12 +3,15 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import IPage from '../../../interfaces/page'
 import './hero.scss'
 import { useDencrypt } from "use-dencrypt-effect";
-import logo from '../../../../img/mylogo.png'
+import { motion } from 'framer-motion';
+import { useMediaQuery } from 'react-responsive'
 
 const values = ["Full Stack Developer", "Front End Developer", "Software Developer"];
 
 const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
     const { result, dencrypt } = useDencrypt();
+
+    const isMobile = useMediaQuery({query: '(max-width: 575px)'})
 
     React.useEffect(() => {
         let i = 0;
@@ -24,10 +27,13 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
 
     return <header className="hbg">
       <div className="hero">
-        <div className="logo">
-          <img src={logo} alt="KA logo" />
-        </div>
-        <h1>Klifford Agujar</h1>
+        <motion.h1 
+          initial={{fontSize: '.1em'}}
+          animate={{fontSize: isMobile? '2em':'5em'}}
+          // transition={{ duration: .1 }}
+          >
+          Klifford Agujar
+        </motion.h1>
         {/* Search Engine purposes */}
         <h2>Portfolio</h2>
         <h2>Full Stack Developer</h2>
