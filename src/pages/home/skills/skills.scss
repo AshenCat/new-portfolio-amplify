@@ -1,6 +1,7 @@
 .skills {
     padding-bottom: 90px;
     padding-top: 60px;
+    margin-top: -5px;
     background-color: var(--main-bg-darker-color);
     h3{
         text-align: center;
@@ -45,5 +46,20 @@
                 font-size: .3em;
             }
         }
+    }
+}
+
+
+.wave-bottom {
+    z-index: -1;
+    // position: absolute;
+    // height: 130px;
+    margin-top: -500px;
+    width: 100%;
+    // margin-top: 1px;
+    // width: 200%;
+    .st0-bottom {            
+        fill:  var(--main-bg-darker-color);
+        stroke:  var(--main-bg-darker-color);
     }
 }

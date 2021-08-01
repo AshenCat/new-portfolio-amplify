@@ -9,15 +9,14 @@
 
 .projects {
     background-color: rgba(255,255,255,0);
-    position: relative;
+    // position: relative;
     padding-bottom: 40px;
     @media screen and (max-width: 700px) {
         padding-bottom: 10px;
     }
-    overflow: hidden;
     .wave-top {
         z-index: -1;
-        position: absolute;
+        // position: absolute;
         width: 200%;
         left: 0;
         // height: 80%;
@@ -26,33 +25,6 @@
         .st-top {
             // width: 100%;
             overflow: hidden;
-            fill:  var(--main-bg-darker-color);;
-            stroke:  var(--main-bg-darker-color);;
-        }
-    }
-    .wave-top2 {
-        z-index: -1;
-        position: absolute;
-        width: 200%;
-        left: 0;
-        animation: wave linear 90s infinite;
-        .st-top {
-            // width: 100%;
-            overflow: hidden;
-            fill: #efefef; 
-            stroke:  var(--main-bg-darker-color);
-        }
-    }
-    .wave-bottom {
-        z-index: -1;
-        position: absolute;
-        bottom: 0;
-        z-index: 0;
-        // height: 130px;
-        width: 100%;
-        // margin-top: 1px;
-        // width: 200%;
-        .st0-bottom {            
             fill:  var(--main-bg-darker-color);
             stroke:  var(--main-bg-darker-color);
         }
