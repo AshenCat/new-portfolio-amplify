@@ -1,0 +1,67 @@
+._btn {
+    outline:0;
+    border-radius: 50px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 20px;
+    -webkit-tap-highlight-color: transparent;
+    transition: all 500ms ease-in-out;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &::after, &::before { 
+        content: "";
+        position: absolute;
+    }
+    &::after {
+        // background: #222;
+        border-radius: 120px;
+        content: attr(data-text);
+        color: #fff;
+        // padding: 1.6em 2.5em;
+        -moz-user-select: none;
+        user-select: none;
+        user-drag: none;
+        background: transparent !important;
+    }
+    &::before {
+        top: 50%;
+        left: 50%;
+        background: transparent;
+        box-shadow: 0 1em 2em 3em rgba(85, 17, 0, 0.5),
+                    4em 0em 2em 2em rgba(78, 72, 69, 0.6),
+                    -4em -2em 2em 2em rgba(70, 35, 55, 0.5),
+                    -4em 2em 2em 4em rgba(71, 71, 71, 0.5),
+                    0 -3em 2em 3em rgba(44, 75, 16, 0.5),
+                    2em -1em 2em 2em rgba(40, 39, 44, 0.5);
+        width: 0;
+        height: 0;
+        animation: mix 5s linear infinite;
+    }
+    &:hover {
+        background-color: #222;
+    }
+} 
+
+@keyframes mix {
+  
+    30% {
+      box-shadow: 0 -1em 2em 3em rgba(88, 88, 88, 0.5),
+                  4em -1em 2em 3em rgba(87, 44, 34, 0.8),
+                  -4em 2em 3em 2em rgba(60, 78, 1, 0.5),
+                  -4em -2em 2em 2em rgba(53, 43, 50, 0.6),
+                  0 3em 2em 2em rgba(29, 83, 25, 0.5),
+                  2em 1em 2em 2em rgba(13, 0, 77, 0.5);
+    }
+    
+    60% {
+      box-shadow: 2em 1em 2em 3em rgba(55, 0, 200, 0.5),
+                  3em 1em 2em 3em rgba(25, 150, 0, 0.6),
+                  3em -2em 3em 3em rgba(155, 200, 0, 0.5),
+                  -4em 2em 2em 3em rgba(200, 0, 50, 0.6),
+                  0 -3em 2em 3em rgba(200, 250, 0, 0.5),
+                  -2em 1em 2em 3em rgba(50, 210, 250, 0.6);
+    }
+  
+  }
