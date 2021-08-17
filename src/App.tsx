@@ -18,7 +18,7 @@ const App: React.FunctionComponent<any> = () => {
     
     return <>
         <Header height={height} />
-        <AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.key}>
                 <Route 
                     path='/'

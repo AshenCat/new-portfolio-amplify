@@ -12,6 +12,10 @@ const Blog: React.FunctionComponent<IPage & RouteChildrenProps<any>> = () =>  {
         animate: {
             x: 0, 
         },
+        exit: {
+            x: '-100vw',
+            transition: {ease: 'easeInOut'}
+        }
     }
     return (
         <motion.main
@@ -22,6 +26,7 @@ const Blog: React.FunctionComponent<IPage & RouteChildrenProps<any>> = () =>  {
             transition={{
                 ease: 'easeIn'
             }}
+            exit="exit"
         >
             Under Construction
         </motion.main>
