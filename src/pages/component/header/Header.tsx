@@ -37,6 +37,12 @@ function Header({height}: IPage &  RouteComponentProps<any>): ReactElement<any> 
               animate={isOpen ? "open" : "closed"}
               custom={height}
               ref={containerRef}
+              style={isOpen ? {} : {
+                transitionDelay: '1s',
+                width: '100px', 
+                height: '100px', 
+                overflow: 'hidden'
+              }}
             >
               <motion.div className="background" variants={sidebar} />
               <Navigation toggle={() => toggleOpen()} />
