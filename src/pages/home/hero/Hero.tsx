@@ -40,6 +40,15 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
       }
     }
 
+    const hbgDiv = {
+      initial: {
+        background: "linear-gradient(to right, #fff, #000)"
+      },
+      animate: {
+        background: "linear-gradient(to right, #16222A, #3A6073)"
+      }
+    }
+
     const h1variant = {
       initial: {
         fontSize: '.1em',
@@ -82,7 +91,9 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
         return () => clearInterval(action);
       }, []);
 
-    return <div className="hbg">
+    return <motion.div className="hbg" variants={hbgDiv} 
+    transition={{ duration: 2 }}
+    >
       <div
         role="button"
         tabIndex={0}>
@@ -134,7 +145,7 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
         <h3>{result}&nbsp;</h3>
       </div>
       
-    </div>
+    </motion.div>
 }
 
 export default withRouter(Hero)
