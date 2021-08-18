@@ -40,6 +40,15 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
       }
     }
 
+    const hbgDiv = {
+      initial: {
+        background: "linear-gradient(to right, #fff, #000)"
+      },
+      animate: {
+        background: "linear-gradient(to right, #16222A, #3A6073)"
+      }
+    }
+
     const h1variant = {
       initial: {
         fontSize: '.1em',
@@ -49,6 +58,25 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
         fontSize: '5em',
         color: '#fff',
       }
+    }
+
+    const circleVariant1 = {
+      initial: {
+        r: 0,
+      },
+      animate: {
+        r: window.innerWidth*.20
+      }
+    
+    }
+    const circleVariant2 = {
+      initial: {
+        r: 0,
+      },
+      animate: {
+        r: window.innerWidth*.30
+      }
+      
     }
 
     useEffect(() => {
@@ -63,7 +91,9 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
         return () => clearInterval(action);
       }, []);
 
-    return <div className="hbg">
+    return <motion.div className="hbg" variants={hbgDiv} 
+    transition={{ duration: 2 }}
+    >
       <div
         role="button"
         tabIndex={0}>
@@ -76,8 +106,8 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
             <clipPath id="myClip">
               <circle ref={circleRef} id="circle-shadow" cx="-500" cy="-500" r="150" style={{stroke: "#ffffff", strokeWidth: "5"}} />
 
-              <circle id="mask-circle" className="circle-md" cx="50%" cy="0" r={window.innerWidth*.2} style={{fill: "#ffffff"}}/>
-              <circle id="mask-circle" className="circle-md" cx="50%" cy="100%" r={window.innerWidth*.30} style={{fill: "#ffffff"}}/>
+              <motion.circle variants={circleVariant1} id="mask-circle" className="circle-md" cx="50%" cy="0" r={window.innerWidth*.2} style={{fill: "#ffffff"}}/>
+              <motion.circle variants={circleVariant2} id="mask-circle" className="circle-md" cx="50%" cy="100%" r={window.innerWidth*.30} style={{fill: "#ffffff"}}/>
               <circle id="mask-circle" className="circle-xs" cx="50%" cy="50%" r="200px" style={{fill: "#ffffff"}}/>
               {reveals.map(({x,y}, index) => <circle key={"" + index + (x+y) + `${x}` + `${y}` } id="mask-circle" cx={`${x}%`} cy={`${y}%`} r="200px" style={{fill: "#ffffff"}}/>)}
             </clipPath>
@@ -115,7 +145,7 @@ const Hero: React.FunctionComponent<IPage & RouteComponentProps<any>> = () => {
         <h3>{result}&nbsp;</h3>
       </div>
       
-    </div>
+    </motion.div>
 }
 
 export default withRouter(Hero)
