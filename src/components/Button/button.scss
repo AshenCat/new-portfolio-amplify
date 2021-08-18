@@ -24,6 +24,10 @@
         user-select: none;
         user-drag: none;
         background: transparent !important;
+        @media screen and (max-width: 367px) {
+            padding: 20px;
+            margin-left: -20px ;
+        }
     }
     &::before {
         top: 50%;
