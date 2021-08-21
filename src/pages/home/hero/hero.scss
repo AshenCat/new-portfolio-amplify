@@ -96,3 +96,13 @@
     text-transform: uppercase;
     mix-blend-mode: difference;
 }
+
+.hover-circle {
+    // -webkit-transform: scale(2);
+    r: 150;
+    transition: r 1s;
+}
+
+.hover-circle-moving {
+    r: 90 !important;
+}

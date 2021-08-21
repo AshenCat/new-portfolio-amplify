@@ -8,7 +8,7 @@ import IPage from '../../../interfaces/page';
 
 function Header({height}: IPage &  RouteComponentProps<any>): ReactElement<any> {
     const [isOpen, toggleOpen] = useCycle(false, true);
-    const containerRef = useRef(null);
+    // const containerRef = useRef(null);
 
     const sidebar = {
         open: (height = 1000) => ({
@@ -36,7 +36,7 @@ function Header({height}: IPage &  RouteComponentProps<any>): ReactElement<any> 
               initial={false}
               animate={isOpen ? "open" : "closed"}
               custom={height}
-              ref={containerRef}
+              // ref={containerRef}
               style={isOpen ? {} : {
                 transitionDelay: '1s',
                 width: '100px', 
