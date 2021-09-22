@@ -8,6 +8,7 @@ import Catflix from '../../../../img/Catflix-register.webp'
 import ML from '../../../../img/MLcomp.gif'
 import personaloverlay from '../../../../img/personaloverlay.webp'
 import portfolio from '../../../../img/portfolio.webp'
+import codeEditor from '../../../../img/code-editor.webp'
 import axios from 'axios'
 import Button from '../../../components/Button/Button'
 
@@ -29,6 +30,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
     const [overlayData, setOverlayData] = useState<GithubData[]>([])
     const [catflixData, setCatflixData] = useState<GithubData[]>([])
     const [portfolioData, setPorfolioData] = useState<GithubData[]>([])
+    const [codeEditorData, setCodeEditorData] = useState<GithubData[]>([])
 
     useEffect(() => {
         axios.get('https://api.github.com/repos/ashencat/catflix/commits').then(res=>{
@@ -43,6 +45,11 @@ const Projects: React.FunctionComponent<IPage> = () => {
         })
         axios.get('https://api.github.com/repos/ashencat/new-portfolio-amplify/commits').then(res=>{
             setPorfolioData(res.data)
+        }).catch(err=>{
+            console.log(err)
+        })
+        axios.get('https://api.github.com/repos/ashencat/code-editor-app/commits').then(res=>{
+            setCodeEditorData(res.data)
         }).catch(err=>{
             console.log(err)
         })
@@ -128,7 +135,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <p>
                             Personal Project - The goal of the desktop application is to organize my calendar schedule to my liking. The application made my daily tasks more optimized, and it also reminds me when there is an upcoming task. This application runs on Electronjs + Reactjs + mongoose which is pure javascript.
                         </p>
-                        <div><b>Commits: </b></div>
+                        <div style={{paddingTop: '20px'}}><b>Commits: </b></div>
                         <div className="small-list" style={{height: '180px'}}>
                             {/* vscode pushes doesn't link to account so only merge will link my account */}
                             {overlayData.map((obj, index)=> {
@@ -165,7 +172,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <p>
                             Personal Project - (Still ongoing) The goal for this project is to make a web app where users can upload their memes essentially something like 9gag or imgur. The project&apos;s scope is vast and it is expected to take time to finish it. 
                         </p>
-                        <div><b>Commits: </b></div>
+                        <div style={{paddingTop: '20px'}}><b>Commits: </b></div>
                         <div className="small-list" style={{height: '180px'}}>
                             {/* vscode pushes doesn't link to account so only merge will link my account */}
                             {catflixData.map((obj, index)=> {
@@ -204,7 +211,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         <p>
                             Personal Project - This portfolio page is built with React, SASS, and Typescript hosted at Amplify. It also uses AWS Lambda serverless function to forward an email to me in the footer section. Below lists the changes made to this page.
                         </p>
-                        <div><b>Commits: </b></div>
+                        <div style={{paddingTop: '20px'}}><b>Commits: </b></div>
                         <div className="small-list" style={{height: '180px'}}>
                             {/* vscode pushes doesn't link to account so only merge will link my account */}
                             {portfolioData.map((obj, index)=> {
@@ -228,6 +235,45 @@ const Projects: React.FunctionComponent<IPage> = () => {
                         </div>
                         <div className="links">
                             <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/new-portfolio-amplify')}>View Repository</Button>
+                        </div>
+                    </div>
+                </div>
+                <div className="project-container">
+                    <div className="image" onClick={()=>openInAnotherPage('https://raw.githubusercontent.com/AshenCat/new-portfolio-amplify/master/img/code-editor.webp')} onKeyPress={()=>{}} role="button" tabIndex={0}>
+                        <div className="prj-image">
+                            <img src={codeEditor} alt="Portfolio" className="prj-image" />
+                        </div>
+                    </div>
+                    <div className="text">
+                        <h4>08</h4>
+                        <h3>Code Editor App</h3>
+                        <p>
+                            Another personal project to test the waters of Redux with typescript. This is a code editor app built from scratch using Webpack, Typescript, React, Redux/toolkit, Material-UI, Auth0, and Monaco.
+                        </p>
+                        <div style={{paddingTop: '20px'}}><b>Commits: </b></div>
+                        <div className="small-list" style={{height: '180px'}}>
+                            {/* vscode pushes doesn't link to account so only merge will link my account */}
+                            {codeEditorData.map((obj, index)=> {
+                                if(obj?.commit?.message) {
+                                    const commitDate = obj?.commit?.author?.date ? new Date(obj?.commit?.author?.date).toString() : 'N/A'
+                                    return <div className="list-row" key={`${obj?.commit?.author?.name}${obj?.commit?.author?.date}${index}`}>
+                                    <div className="author">
+                                        <img src="https://avatars.githubusercontent.com/u/8600507?v=4" alt="Klifford Agujar" className="smol-image" />
+                                        <div className="nameAndDate">
+                                            <div className="name">Klifford Agujar</div> 
+                                            <div><small>{commitDate}</small></div> 
+                                        </div>
+                                    </div>
+                                    <div className="message">
+                                        - {obj?.commit?.message}
+                                    </div>
+                                </div>
+                                }
+                                else return;
+                            })}
+                        </div>
+                        <div className="links">
+                            <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/code-editor-app')}>View Repository</Button>
                         </div>
                     </div>
                 </div>
