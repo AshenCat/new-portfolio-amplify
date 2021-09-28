@@ -94,7 +94,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                             CAPSTONE - The idea is to migrate a business workflow from paper-based management into digital inventory management system and is expected to cut costs of a business owner after migrating. The Application was built on MERN stack and is designed to utilize intranets (private local network) taking scalability into consideration.
                         </p>
                         <div className="links"> 
-                            <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/capstone-abc-store')}>View Repository</Button>
+                            <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/capstone-abc-store')}>Github</Button>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                             COLLEGE - Whilst python isn&apos;t my most comfortable language, I&apos;ve had a good time doing this project. Using the Common Objects in Context (COCO) dataset, I was able to detect objects in my screen in real time. Instead of inputting single image feeds, I modified it to take video feed instead and label all the objects it detects.
                         </p>
                         <div className="links">
-                            <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/PythonObjectDetection')}>View Repository</Button>
+                            <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/PythonObjectDetection')}>Github</Button>
                         </div>
                     </div>
                 </div>
@@ -158,7 +158,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                             })}
                         </div>
                         <div className="links">
-                            <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/personal-overlay-2')}>View Repository</Button>
+                            <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/personal-overlay-2')}>Github</Button>
                         </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                             })}
                         </div>
                         <div className="links">
-                            <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/catflix')}>View Repository</Button>
+                            <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/catflix')}>Github</Button>
                         </div>
                     </div>
                 </div>
@@ -234,7 +234,7 @@ const Projects: React.FunctionComponent<IPage> = () => {
                             })}
                         </div>
                         <div className="links">
-                            <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/new-portfolio-amplify')}>View Repository</Button>
+                            <Button className="btn-link" onClick={()=>openInAnotherPage('https://github.com/AshenCat/new-portfolio-amplify')}>Github</Button>
                         </div>
                     </div>
                 </div>
