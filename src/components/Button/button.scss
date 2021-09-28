@@ -47,21 +47,21 @@
 @keyframes mix {
   
     30% {
-      box-shadow: 0 -1em 2em 3em rgba(88, 88, 88, 0.5),
-                  4em -1em 2em 3em rgba(87, 44, 34, 0.8),
-                  -4em 2em 3em 2em rgba(60, 78, 1, 0.5),
-                  -4em -2em 2em 2em rgba(53, 43, 50, 0.6),
-                  0 3em 2em 2em rgba(29, 83, 25, 0.5),
-                  2em 1em 2em 2em rgba(13, 0, 77, 0.5);
+        box-shadow: 0 -1em 2em 3em rgba(255, 0, 200, 0.5),
+        4em -1em 2em 3em rgba(255, 50, 0, 0.8),
+        -4em 2em 3em 2em rgba(155, 200, 0, 0.5),
+        -4em -2em 2em 2em rgba(200, 0, 150, 0.6),
+        0 3em 2em 2em rgba(20, 250, 0, 0.5),
+        2em 1em 2em 2em rgba(50, 10, 250, 0.5);
     }
     
     60% {
-      box-shadow: 2em 1em 2em 3em rgba(55, 0, 200, 0.5),
-                  3em 1em 2em 3em rgba(25, 150, 0, 0.6),
-                  3em -2em 3em 3em rgba(155, 200, 0, 0.5),
-                  -4em 2em 2em 3em rgba(200, 0, 50, 0.6),
-                  0 -3em 2em 3em rgba(200, 250, 0, 0.5),
-                  -2em 1em 2em 3em rgba(50, 210, 250, 0.6);
+        box-shadow: 2em 1em 2em 3em rgba(55, 0, 200, 0.5),
+        3em 1em 2em 3em rgba(25, 150, 0, 0.6),
+        3em -2em 3em 3em rgba(155, 200, 0, 0.5),
+        -4em 2em 2em 3em rgba(200, 0, 50, 0.6),
+        0 -3em 2em 3em rgba(200, 250, 0, 0.5),
+        -2em 1em 2em 3em rgba(50, 210, 250, 0.6);
     }
   
   }
