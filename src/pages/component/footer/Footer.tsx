@@ -58,6 +58,7 @@ const Footer: React.FunctionComponent<IPage> = () => {
 
         if (!err) {
             setLoading(true);
+            console.log('hash', aws_key);
             axios
                 .post(
                     aws_endpoint,

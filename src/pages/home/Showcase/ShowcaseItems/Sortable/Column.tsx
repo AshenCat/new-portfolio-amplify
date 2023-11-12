@@ -3,6 +3,7 @@ import { Draggable, Droppable } from 'react-beautiful-dnd';
 import TodoCard from './TodoCard';
 import { Board, ColumnType, Todo, TypedColumn } from './SortableCards';
 import { FaMinus, FaPlus } from 'react-icons/fa';
+import { v4 as uuidv4 } from 'uuid';
 
 type Props = {
     id: TypedColumn;
@@ -34,7 +35,7 @@ function Column({ id, todos, index, board, setBoard }: Props) {
             id: currCol[0],
             todos: [
                 ...currCol[1].todos,
-                { id: Date.now() + '', title: newTitle, status: currCol[0] },
+                { id: uuidv4(), title: newTitle, status: currCol[0] },
             ],
         };
         const newBoard = new Map(board.columns);

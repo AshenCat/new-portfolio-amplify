@@ -1,11 +1,17 @@
 const webpack = require('webpack')
 
-module.exports = {
-    mode: 'production',
-    devtool: 'source-map',
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env.name': JSON.stringify('Klifford')
-        })
-    ]
+module.exports = (env) => {
+
+    return {
+        mode: 'production',
+        devtool: 'source-map',
+        plugins: [
+            new webpack.DefinePlugin({
+                'process.env.name': JSON.stringify('Klifford')
+            }),
+            new webpack.DefinePlugin({
+                'process.env.EMAIL_AWS_KEY': env.EMAIL_AWS_KEY
+            })
+        ]
+    }
 }

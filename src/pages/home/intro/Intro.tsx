@@ -14,17 +14,17 @@ const Hero: React.FunctionComponent<object> = () => {
     return (
         <section className="p-4">
             <div className="page-container !mt-10">
-                <Separator n={12} baseVelocity={-10} scrollerId="ABOUT ME">
+                <Separator n={12} baseVelocity={-5} scrollerId="ABOUT ME">
                     <h3 className="text-center text-3xl font-semibold gradient-text-1">
                         About Me
                     </h3>
                 </Separator>
                 <InView>
-                    <div className="flex flex-col md:flex-row gap-x-5 my-20">
+                    <div className="flex flex-col-reverse md:flex-row gap-8 my-20">
                         {/* <img src={me} alt="me" /> */}
-                        <div className="md:text-2xl flex flex-col justify-center transition-all">
+                        <div className="mt-8 md:mt-[unset] md:text-2xl flex flex-col justify-center transition-all">
                             <button
-                                className="flex items-center flex-row p-2 border-2 gradient-bg-1 gradient-animation-1 border-[color:var(--dark-color-1)] text-[color:var(--dark-color-1)] hover:text-[color:var(--accent-color)] hover:border-[color:var(--accent-color)] shadow my-2"
+                                className="flex items-center flex-row p-4 gradient-bg-1 gradient-animation-1 text-[color:var(--dark-color-1)] hover:text-[color:var(--accent-color)] shadow my-2"
                                 onClick={() =>
                                     openInNewTab(
                                         'https://www.linkedin.com/in/klifford-agujar-8714a41a9/'
@@ -35,7 +35,7 @@ const Hero: React.FunctionComponent<object> = () => {
                                 <span className="ml-1 md:ml-4">Linkedin</span>
                             </button>
                             <button
-                                className="flex items-center flex-row p-2 border-2 gradient-bg-1 gradient-animation-1 border-[color:var(--dark-color-1)] text-[color:var(--dark-color-1)] hover:text-[color:var(--accent-color)] hover:border-[color:var(--accent-color)] shadow my-2"
+                                className="flex items-center flex-row p-4 gradient-bg-1 gradient-animation-1 text-[color:var(--dark-color-1)] hover:text-[color:var(--accent-color)] shadow my-2"
                                 onClick={() =>
                                     openInNewTab('https://github.com/ashencat')
                                 }

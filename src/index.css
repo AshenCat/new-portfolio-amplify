@@ -91,12 +91,10 @@ button[disabled] {
 
 .vertical-content {
     transition: all .1s .1s;
-    background: #ffffff4d;
-    border-radius: 16px;
+    background: linear-gradient(30deg, rgba(200, 81, 192, .15), rgba(255, 205, 112, .15));
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .vertical {

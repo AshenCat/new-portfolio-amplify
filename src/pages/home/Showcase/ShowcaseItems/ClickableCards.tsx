@@ -10,7 +10,7 @@ function ClickableCards() {
         <>
             <div className="dark-color">
                 I love to keep myself up-to-date with the latest industry
-                trends. My github is home to a lot of random projects!
+                trends. Github is home to a lot of my random projects!
                 Here&apos;s some of the product of my free time:
             </div>
             <InView>

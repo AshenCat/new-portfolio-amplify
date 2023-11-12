@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { DragDropContext, DropResult, Droppable } from 'react-beautiful-dnd';
 import Column from './Column';
 import InView from '../../../../../components/InView/InView';
+import { v4 as uuidv4 } from 'uuid';
 // import Column from './Column';
 
 function Board() {
@@ -129,12 +130,12 @@ const BoardData: Board = {
                 id: 'todo',
                 todos: [
                     {
-                        id: '1',
+                        id: uuidv4(),
                         title: 'Explore the wonders of the world',
                         status: 'todo',
                     },
                     {
-                        id: '2',
+                        id: uuidv4(),
                         title: 'Check for latest web technology updates',
                         status: 'todo',
                     },
@@ -147,12 +148,12 @@ const BoardData: Board = {
                 id: 'in-progress',
                 todos: [
                     {
-                        id: '3',
+                        id: uuidv4(),
                         title: 'Live life to the fullest',
                         status: 'todo',
                     },
                     {
-                        id: '4',
+                        id: uuidv4(),
                         title: 'Daily coding grind',
                         status: 'in-progress',
                     },
@@ -170,12 +171,12 @@ const BoardData: Board = {
                 id: 'done',
                 todos: [
                     {
-                        id: '6',
+                        id: uuidv4(),
                         title: 'Take a good sip of coffee',
                         status: 'done',
                     },
                     {
-                        id: '7',
+                        id: uuidv4(),
                         title: 'Update this web portfolio',
                         status: 'done',
                     },

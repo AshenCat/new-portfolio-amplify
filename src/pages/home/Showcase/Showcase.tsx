@@ -8,7 +8,7 @@ function Showcase() {
     return (
         <section className="p-4">
             <div className="page-container">
-                <Separator n={9} baseVelocity={15} scrollerId="SHOWCASE">
+                <Separator n={9} baseVelocity={6} scrollerId="SHOWCASE">
                     <h3 className="text-center text-3xl font-semibold gradient-text-1">
                         Showcase
                     </h3>
