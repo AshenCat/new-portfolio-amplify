@@ -1,0 +1,90 @@
+#fast-meter {
+    transform-origin: 118px 186px;
+    animation: 3s infinite alternate fastmeter;
+}
+
+@keyframes fastmeter {
+    from {
+        transform: rotate(-60deg);
+    }
+
+    to {
+        transform: rotate(30deg);
+    }
+}
+
+.fast-rocket-phone {
+    position: relative;
+    animation-delay: .5;
+    animation: 1.75s infinite alternate fast-rocket-phone;
+}
+
+@keyframes fast-rocket-phone {
+    from {
+        transform: translateY(-1px);
+    }
+
+    to {
+        transform: translateY(3px);
+    }
+}
+
+.fast-rocket-laptop {
+    position: relative;
+    animation: 1s infinite alternate fast-rocket-laptop;
+}
+
+@keyframes fast-rocket-laptop {
+    from {
+        transform: translateY(-2px);
+    }
+
+    to {
+        transform: translateY(3px);
+    }
+}
+
+#fast-circle {
+    position: relative;
+    animation: 2s infinite alternate fast-circle;
+}
+
+@keyframes fast-circle {
+    from {
+        transform: translate(-2px, 5px);
+    }
+
+    to {
+        transform: translate(3px, -6px);
+    }
+}
+
+#fast-rect {
+    position: relative;
+    animation: .75s infinite alternate fast-rect;
+}
+
+@keyframes fast-rect {
+    from {
+        transform: translate(5px, -4px);
+    }
+
+    to {
+        transform: translate(-3px, 2px);
+    }
+}
+
+#fast-triangle {
+    position: relative;
+    animation: 1.5s infinite alternate fast-triangle;
+}
+
+@keyframes fast-triangle {
+    from {
+        transform: rotate(2deg);
+    }
+
+    to {
+        transform: rotate(-2deg);
+    }
+}

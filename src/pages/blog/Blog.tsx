@@ -1,22 +1,21 @@
 import { motion } from 'framer-motion';
-import React from 'react'
-import { RouteChildrenProps } from 'react-router-dom';
+import React from 'react';
 import IPage from '../../interfaces/page';
-import './blog.scss'
+import './blog.css';
 
-const Blog: React.FunctionComponent<IPage & RouteChildrenProps<any>> = () =>  {
+const Blog: React.FunctionComponent<IPage> = () => {
     const mainvariant = {
         initial: {
-            x: '100vw', 
+            x: '100vw',
         },
         animate: {
-            x: 0, 
+            x: 0,
         },
         exit: {
             x: '-100vw',
-            transition: {ease: 'easeInOut'}
-        }
-    }
+            transition: { ease: 'easeInOut' },
+        },
+    };
     return (
         <motion.main
             variants={mainvariant}
@@ -24,13 +23,13 @@ const Blog: React.FunctionComponent<IPage & RouteChildrenProps<any>> = () =>  {
             animate="animate"
             className="blog"
             transition={{
-                ease: 'easeIn'
+                ease: 'easeIn',
             }}
             exit="exit"
         >
             Under Construction
         </motion.main>
-    )
-}
+    );
+};
 
 export default Blog;

@@ -1,51 +1,53 @@
-import { motion } from "framer-motion";
-import { RouteComponentProps, withRouter } from "react-router-dom";
+import { motion } from 'framer-motion';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const variants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 }
+    open: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            y: { stiffness: 1000, velocity: -100 },
+        },
+        originX: 0,
     },
-    originX: 0
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 }
-    }
-  }
+    closed: {
+        y: 50,
+        opacity: 0,
+        transition: {
+            y: { stiffness: 1000 },
+        },
+    },
 };
 
-interface MyComponentProps extends RouteComponentProps<any> {
+interface MyComponentProps {
     routeName: string;
     toggle: () => void;
 }
 
-const MenuItem = (props : MyComponentProps) => {
+const MenuItem = (props: MyComponentProps) => {
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const buttonClick = (route: string) => {
-        switch(route) {
+        switch (route) {
             case 'Home':
-                if (props.history.location.pathname !== '/'){
-                    console.log('routing to \'/\'')
-                    props.toggle()
-                    props.history.push('/')
+                if (location.pathname !== '/') {
+                    console.log("routing to '/'");
+                    props.toggle();
+                    navigate('/');
                 }
                 return;
             case 'Blog':
-                if (props.history.location.pathname !== '/blog'){
-                    console.log('routing to \'/blog\'')
-                    props.toggle()
-                    props.history.push('/blog')
+                if (location.pathname !== '/blog') {
+                    console.log("routing to '/blog'");
+                    props.toggle();
+                    navigate('/blog');
                 }
                 return;
             default:
                 return;
         }
-    }
+    };
 
     return (
         <motion.div
@@ -54,11 +56,11 @@ const MenuItem = (props : MyComponentProps) => {
             whileHover={{ scale: 1.15 }}
             whileTap={{ scale: 0.95 }}
             className="lihead"
-            onClick={()=>buttonClick(props.routeName)}
+            onClick={() => buttonClick(props.routeName)}
         >
-          <h3 className="route">{props.routeName}</h3>
+            <h3 className="route">{props.routeName}</h3>
         </motion.div>
     );
 };
 
-export default withRouter(MenuItem)
+export default MenuItem;

@@ -1,6 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
+const Dotenv = require('dotenv-webpack');
 module.exports = {
     entry: path.resolve(__dirname, '..', './src/index.tsx'),
     resolve: {
@@ -14,11 +14,14 @@ module.exports = {
                 use: ["babel-loader", "eslint-loader"]
             },
             {
-                test: [/\.s[ac]ss$/i, /\.css$/i],
+                test: [
+                    // /\.s[ac]ss$/i, 
+                    /\.css$/i],
                 use: [
                     'style-loader',
                     'css-loader',
-                    'sass-loader'
+                    'postcss-loader'
+                    // 'sass-loader'
                 ]
             },
             {
@@ -36,18 +39,20 @@ module.exports = {
         ],
     },
     output: {
-       path: path.resolve(__dirname, '..', './build'),
-       filename: 'bundle.js',
-       publicPath: '/'
+        path: path.resolve(__dirname, '..', './build'),
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     devServer: {
-      historyApiFallback: true,
-      host: '10.0.0.122',//your ip address
-      port: 8080,
-      useLocalIp: true,
-      disableHostCheck: true,
+        historyApiFallback: true,
+        host: '10.0.0.122', //your ip address
+
+        port: 8080,
+        //   useLocalIp: true,
+        //   disableHostCheck: true,
     },
     plugins: [
+        new Dotenv(),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '..', './src/index.html'),
             favicon: "./src/favicon.ico"
