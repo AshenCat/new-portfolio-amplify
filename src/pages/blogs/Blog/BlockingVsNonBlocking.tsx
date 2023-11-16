@@ -58,9 +58,11 @@ function BlockingVsNonBlocking() {
             className="p-4 xl:p-[unset] page-container text-lg !my-8"
         >
             <div className="flex flex-col my-4">
-                <h2 className="text-2xl gradient-text-1 inline-block">
-                    Blocking Vs. Non-Blocking
-                </h2>
+                <div>
+                    <h2 className="text-2xl gradient-text-1 inline-block">
+                        Blocking Vs. Non-Blocking
+                    </h2>
+                </div>
                 <small>Wednesday, 08:14pm, August 15 2023</small>
             </div>
 
@@ -128,7 +130,7 @@ function BlockingVsNonBlocking() {
                     alt="Postman 10ms base request unaffected by non-blocking request"
                 />
             </div>
-            <div className='mt-8'>
+            <div className="mt-8">
                 <button
                     onClick={() => navigate(-1)}
                     className="bg-black text-white px-4 py-2"

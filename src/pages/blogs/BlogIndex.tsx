@@ -38,26 +38,28 @@ function BlogIndex() {
                             </span>
                             <h2 className="text-2xl gradient-text-1">NodeJS</h2>
                         </button>
-                        <div className="py-4">
+                        <div className="flex flex-col md:flex-row py-4">
                             {openNodeJS && (
                                 <motion.article
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="flex flex-col md:flex-col w-fit"
+                                    initial={{ x: '100%', opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    exit={{ x: '-100%', opacity: 0 }}
+                                    className="flex flex-col md:flex-col basis-[250px] shrink-0 grow-1"
                                 >
                                     <NavLink
-                                        to="blocking-vs-non-blocking"
-                                        className="block shadow hover:shadow-lg hover: transition-all"
+                                        to="/blogs/blocking-vs-non-blocking"
+                                        className="flex flex-col shadow hover:shadow-lg transition-all h-full"
                                     >
-                                        <figure className="text-8xl bg-yellow-300 text-green-500 p-4 flex justify-center">
+                                        <figure className="text-8xl bg-yellow-300 text-green-500 p-4 flex justify-center shrink-0">
                                             <FaNodeJs />
                                         </figure>
-                                        <h3 className="text-bold gradient-text-1 p-4">
-                                            <figcaption>
-                                                Blocking vs Non Blocking
-                                            </figcaption>
-                                        </h3>
+                                        <div className="flex-1 flex justify-center items-center">
+                                            <h3 className="text-bold gradient-text-1 p-4 inline-block">
+                                                <figcaption>
+                                                    Blocking vs Non Blocking
+                                                </figcaption>
+                                            </h3>
+                                        </div>
                                     </NavLink>
                                 </motion.article>
                             )}

@@ -40,8 +40,8 @@ function Header({ height }: IPage): ReactElement<any> {
                         ? {}
                         : {
                               transitionDelay: '1s',
-                              width: '100px',
-                              height: '100px',
+                              width: '75px',
+                              height: '75px',
                               overflow: 'hidden',
                           }
                 }
