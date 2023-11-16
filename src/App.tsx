@@ -2,15 +2,16 @@ import React from 'react';
 import HomePage from './pages/home/Home';
 import './index.css';
 
-import { Route, Routes, useLocation } from 'react-router-dom';
-import Blog from './pages/blog/Blog';
+import { Route, Routes } from 'react-router-dom';
+import Blog from './pages/blogs/Blogs';
 import Header from './pages/component/header/Header';
-import Footer from './pages/component/footer/Footer';
 import { AnimatePresence } from 'framer-motion';
 import useWindowDimensions from './hooks/useWindowDimensions';
+import BlogIndex from './pages/blogs/BlogIndex';
+import BlockingVsNonBlocking from './pages/blogs/Blog/BlockingVsNonBlocking';
 
 const App: React.FunctionComponent<any> = () => {
-    const location = useLocation();
+    // const location = useLocation();
 
     const { width, height } = useWindowDimensions();
 
@@ -18,15 +19,23 @@ const App: React.FunctionComponent<any> = () => {
         <>
             <Header height={height} />
             <AnimatePresence mode="wait">
-                <Routes location={location} key={location.key}>
+                <Routes>
                     <Route
                         path="/"
                         element={<HomePage name={'HomePage'} width={width} />}
                     />
-                    <Route path="/blog" element={<Blog name={'BlogPage'} />} />
+                    <Route
+                        path="blogs"
+                        element={<Blog name={'BlogPage'} />}
+                    >
+                        <Route index element={<BlogIndex />} />
+                        <Route
+                            path="blocking-vs-non-blocking"
+                            element={<BlockingVsNonBlocking />}
+                        />
+                    </Route>
                 </Routes>
             </AnimatePresence>
-            <Footer name="footer" />
         </>
     );
 };

@@ -37,11 +37,11 @@ const MenuItem = (props: MyComponentProps) => {
                     navigate('/');
                 }
                 return;
-            case 'Blog':
-                if (location.pathname !== '/blog') {
-                    console.log("routing to '/blog'");
+            case 'Blogs':
+                if (location.pathname !== '/blogs') {
+                    console.log("routing to '/blogs'");
                     props.toggle();
-                    navigate('/blog');
+                    navigate('/blogs');
                 }
                 return;
             default:

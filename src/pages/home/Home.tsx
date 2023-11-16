@@ -1,4 +1,5 @@
 import IPage from '../../interfaces/page';
+import Footer from '../component/footer/Footer';
 import Showcase from './Showcase/Showcase';
 import Hero from './hero/Hero';
 import Intro from './intro/Intro';
@@ -37,6 +38,7 @@ const Home: React.FunctionComponent<IPage> = (props) => {
             {/* <Projects name="projects" /> */}
             <Showcase />
             <Skills name="skills" />
+            <Footer name="footer" />
         </motion.main>
     );
 };

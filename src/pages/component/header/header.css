@@ -16,7 +16,7 @@ nav {
   right: 0;
   bottom: 0;
   width: 300px;
-  background: #a1a1a11a;
+  background: linear-gradient(30deg, rgba(200, 81, 192, .15), rgba(255, 205, 112, .15));
   backdrop-filter: blur(15px);
 }
 

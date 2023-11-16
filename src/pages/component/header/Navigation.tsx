@@ -42,4 +42,4 @@ export const Navigation = ({toggle}: toggle) => (
   </motion.ul>
 );
 
-const itemIds = ['Home', 'Blog'];
+const itemIds = ['Home', 'Blogs'];

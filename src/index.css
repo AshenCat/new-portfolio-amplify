@@ -128,6 +128,12 @@ button[disabled] {
     background-size: 400% 400%;
 }
 
+.gradient-bg-metal {
+    background-color: #d7d7d7;
+    background-image: linear-gradient(147deg, #d7d7d7 0%, #353535 74%);
+    background-size: 400% 400%;
+}
+
 .gradient-animation-1 {
     -webkit-animation: GradientAnimation1 6s ease infinite;
     -moz-animation: GradientAnimation1 6s ease infinite;

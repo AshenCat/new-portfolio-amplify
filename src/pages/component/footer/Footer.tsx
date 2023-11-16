@@ -95,9 +95,11 @@ const Footer: React.FunctionComponent<IPage> = () => {
     };
     return (
         <footer className="bg-[color:var(--dark-color-1)] text-[#f6f6f6] flex flex-col p-4">
-            <h3 className="text-center text-3xl font-semibold gradient-text-1 my-8">
-                Contact
-            </h3>
+            <div className="text-center my-8">
+                <h3 className="text-3xl font-semibold gradient-text-1 inline-block">
+                    Contact
+                </h3>
+            </div>
             <div className="page-container w-full flex flex-col gap-4">
                 {sendSuccess && (
                     <div className="bg-green-400 p-8 flex items-center max-w-[400px] mx-auto">
