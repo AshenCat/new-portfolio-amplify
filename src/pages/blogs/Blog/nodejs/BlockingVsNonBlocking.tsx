@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { mainvariant } from '../../../config/config';
+import { mainvariant } from '../../../../config/config';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/dark.min.css';
 import { marked } from 'marked';
-import base0 from './images/base-0.png';
-import blocking0 from './images/blocking-0.png';
-import BaseWithBlocking from './images/Base-with-Blocking.png';
+import base0 from '../images/base-0.png';
+import blocking0 from '../images/blocking-0.png';
+import BaseWithBlocking from '../images/Base-with-Blocking.png';
 import { useNavigate } from 'react-router-dom';
 
 const reg = `
@@ -46,6 +46,12 @@ function BlockingVsNonBlocking() {
         hljs.highlightAll();
         document.title = "Blocking vs. Non-Blocking - Klifford's Blog";
     }, []);
+
+    useEffect(() => {
+        const blogHeader = document.getElementById('blog-header');
+        if (blogHeader) blogHeader.scrollIntoView();
+    }, []);
+
     return (
         <motion.main
             variants={mainvariant}
@@ -63,7 +69,12 @@ function BlockingVsNonBlocking() {
                         Blocking Vs. Non-Blocking
                     </h2>
                 </div>
-                <small>Wednesday, 08:14pm, August 15 2023</small>
+                <div>
+                    <small>Wednesday, 8:14PM</small>
+                </div>
+                <div>
+                    <small>August, 15 2023</small>
+                </div>
             </div>
 
             <p className="my-2">
@@ -124,6 +135,10 @@ function BlockingVsNonBlocking() {
             <p className="my-2">
                 Now, the base request is unaffected by the 10s request!
             </p>
+            <p className="my-2">
+                <b>Highlight</b>: Always favor non-blocking I/O over blocking
+                I/O.
+            </p>
             <div className="my-2">
                 <img
                     src={base0}
@@ -132,10 +147,10 @@ function BlockingVsNonBlocking() {
             </div>
             <div className="mt-8">
                 <button
-                    onClick={() => navigate(-1)}
+                    onClick={() => navigate('/blogs')}
                     className="bg-black text-white px-4 py-2"
                 >
-                    Go Back
+                    Back to Blogs
                 </button>
             </div>
         </motion.main>

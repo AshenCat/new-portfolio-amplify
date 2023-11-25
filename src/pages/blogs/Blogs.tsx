@@ -19,6 +19,7 @@ const Blogs: React.FunctionComponent<IPage> = () => {
                 ease: 'easeIn',
             }}
             exit="exit"
+            id="blog-header"
         >
             <div className="p-2 bg-[color:var(--dark-color-1)]">
                 <div className="page-container">

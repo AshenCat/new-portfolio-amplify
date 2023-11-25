@@ -8,7 +8,9 @@ import Header from './pages/component/header/Header';
 import { AnimatePresence } from 'framer-motion';
 import useWindowDimensions from './hooks/useWindowDimensions';
 import BlogIndex from './pages/blogs/BlogIndex';
-import BlockingVsNonBlocking from './pages/blogs/Blog/BlockingVsNonBlocking';
+import BlockingVsNonBlocking from './pages/blogs/Blog/nodejs/BlockingVsNonBlocking';
+import HandlingMultipleAsyncPromises from './pages/blogs/Blog/nodejs/HandlingMultipleAsyncPromises';
+import AvoidingExpensiveRerender from './pages/blogs/Blog/react/AvoidingExpensiveRerender';
 
 const App: React.FunctionComponent<any> = () => {
     // const location = useLocation();
@@ -24,15 +26,24 @@ const App: React.FunctionComponent<any> = () => {
                         path="/"
                         element={<HomePage name={'HomePage'} width={width} />}
                     />
-                    <Route
-                        path="blogs"
-                        element={<Blog name={'BlogPage'} />}
-                    >
+                    <Route path="blogs" element={<Blog name={'BlogPage'} />}>
                         <Route index element={<BlogIndex />} />
-                        <Route
-                            path="blocking-vs-non-blocking"
-                            element={<BlockingVsNonBlocking />}
-                        />
+                        <Route path='nodejs'>
+                            <Route
+                                path="blocking-vs-non-blocking"
+                                element={<BlockingVsNonBlocking />}
+                            />
+                            <Route
+                                path="handling-multiple-async-promises"
+                                element={<HandlingMultipleAsyncPromises />}
+                            />
+                        </Route>
+                        <Route path='react'>
+                            <Route
+                                path="avoid-expensive-rerenders"
+                                element={<AvoidingExpensiveRerender />}
+                            />
+                        </Route>
                     </Route>
                 </Routes>
             </AnimatePresence>

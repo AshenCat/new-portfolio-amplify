@@ -2,4 +2,6 @@ build
 node_modules
 .env
 
+test.js
+
 # src/config
