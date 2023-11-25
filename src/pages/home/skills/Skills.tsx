@@ -18,9 +18,9 @@ import {
 import { IoLogoAmplify } from 'react-icons/io5';
 import Separator from '../../../components/Separator/Separator';
 import InView from '../../../components/InView/InView';
+import SkillCard from './SkillCard';
 
 const Skills: React.FunctionComponent<IPage> = () => {
-    const iconClassName = 'text-8xl';
     return (
         <>
             {/* <svg
@@ -36,120 +36,79 @@ const Skills: React.FunctionComponent<IPage> = () => {
                 ></path>
             </svg> */}
             <section className="p-4">
-                <div className="page-container ">
+                <div className="page-container">
                     <Separator n={14} baseVelocity={-8} scrollerId="SKILLS">
                         <h3 className="text-center text-3xl font-semibold gradient-text-1">
                             Skills
                         </h3>
                     </Separator>
                     <InView>
-                        <div className="flex flex-wrap justify-between content-center gap-8 transition-all my-8">
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiReact className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        React
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiJavascript className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        Javascript
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiTypescript className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        Typescript
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiNodedotjs className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        NodeJs
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiMongodb className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        MongoDB
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiMysql className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        MySQL
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiNextdotjs className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        NextJS
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiElectron className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        ElectronJS
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiAmazonaws className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        AWS
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <IoLogoAmplify className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        Amplify
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiStackoverflow
-                                        className={iconClassName}
-                                    />
-                                    <figcaption className="text-center">
-                                        Stackoverflow
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiTailwindcss className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        Tailwind
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="flex flex-col flex-1 basis-auto p-8 rounded bg-white shadow hover:shadow-lg skill-card transition-all">
-                                <figure className="flex flex-col items-center transition-all">
-                                    <SiRedux className={iconClassName} />
-                                    <figcaption className="text-center">
-                                        Redux
-                                    </figcaption>
-                                </figure>
-                            </div>
+                        <div className="flex flex-wrap justify-between content-center transition-all my-8">
+                            <SkillCard
+                                Icon={SiReact}
+                                title="React"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={SiJavascript}
+                                title="Javascript"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={SiTypescript}
+                                title="Typescript"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={SiNodedotjs}
+                                title="NodeJs"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={SiMongodb}
+                                title="MongoDB"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={SiMysql}
+                                title="MySQL"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={SiNextdotjs}
+                                title="NextJS"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={SiElectron}
+                                title="ElectronJS"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={SiAmazonaws}
+                                title="AWS"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={IoLogoAmplify}
+                                title="Amplify"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={SiStackoverflow}
+                                title="Stackoverflow"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={SiTailwindcss}
+                                title="Tailwind"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
+                            <SkillCard
+                                Icon={SiRedux}
+                                title="Redux"
+                                skillCardClassName="hover:text-[color:var(--accent-color)]"
+                            />
                         </div>
                     </InView>
                 </div>

@@ -80,11 +80,6 @@ button[disabled] {
     color: var(--dark-color-1)
 }
 
-.skill-card:hover>* {
-    scale: 1.05;
-    color: var(--accent-color)
-}
-
 /* .vertical-card { */
 /* background: linear-gradient(0deg, var(--dark-color-1), var(--dark-color-1), #ffcc70); */
 /* } */
