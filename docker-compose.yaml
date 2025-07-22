@@ -1,8 +1,9 @@
 services:
-    web:
+    old-portfolio:
+        container_name: old-portfolio
         image: kliffordagujar/old-portfolio
-        ports:
-            - '80:80'
+        # ports:
+        #     - '80:80'
         volumes:
             - .:/app
             - ./node_modules:/app/node_modules
