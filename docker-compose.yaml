@@ -1,0 +1,14 @@
+services:
+    web:
+        image: kliffordagujar/old-portfolio
+        ports:
+            - '80:80'
+        volumes:
+            - .:/app
+            - ./node_modules:/app/node_modules
+        environment:
+            NODE_ENV: prod
+            EMAIL_AWS_KEY: ${EMAIL_AWS_KEY}
+        stdin_open: true
+        tty: true
+        # command: npm start
