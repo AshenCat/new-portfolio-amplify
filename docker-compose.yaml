@@ -13,3 +13,8 @@ services:
         stdin_open: true
         tty: true
         # command: npm start
+        networks:
+            - agujar-public
+networks:
+    agujar-public:
+        external: true
